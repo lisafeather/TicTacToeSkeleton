@@ -24,9 +24,8 @@ class GamesController < ApplicationController
   # Flash winner
   # Make it viewable in show!
   def update
-    #todo
     @game = Game.find(params[:id])
-    #binding.pry
+    @game.update_attributes(@game.board)
     redirect_to @game
   end
 end
